@@ -134,4 +134,4 @@
     <div style="clear:both;"></div>
 </div>
 <?php }} ?>
-<?php $mabilis_ttl=1311491479; $mabilis_last_modified=1307609450; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\orders\list.tpl ?>
+<?php $mabilis_ttl=1311661221; $mabilis_last_modified=1307609450; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\orders\list.tpl ?>

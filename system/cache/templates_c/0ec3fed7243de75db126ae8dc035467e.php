@@ -154,4 +154,4 @@
     </div>
 
 </div>
-<?php $mabilis_ttl=1311491478; $mabilis_last_modified=1289816442; //Z:\home\kupontut.il\www\/templates/administrator/dashboard.tpl ?>
+<?php $mabilis_ttl=1311661223; $mabilis_last_modified=1289816442; //Z:\home\kupontut.il\www\/templates/administrator/dashboard.tpl ?>

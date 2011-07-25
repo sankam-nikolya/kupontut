@@ -165,4 +165,4 @@
 		    el.addClass('active');
 		 }
 </script>
-<?php $mabilis_ttl=1311507880; $mabilis_last_modified=1291624714; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\settings\settings.tpl ?>
+<?php $mabilis_ttl=1311629278; $mabilis_last_modified=1291624714; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\settings\settings.tpl ?>

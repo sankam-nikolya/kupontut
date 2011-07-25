@@ -172,4 +172,4 @@
          }
     </script>
 
-<?php $mabilis_ttl=1311509538; $mabilis_last_modified=1308233576; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\products\list.tpl ?>
+<?php $mabilis_ttl=1311661236; $mabilis_last_modified=1308233576; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\products\list.tpl ?>

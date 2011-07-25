@@ -10,7 +10,7 @@
 			<a href="#"><img src="<?php if(isset($THEME)){ echo $THEME; } ?>/images/jj.png" alt="" /></a>
 			<a href="#"><img src="<?php if(isset($THEME)){ echo $THEME; } ?>/images/plus.png" alt="" /></a>
 		</div>
-		<div class="crumb"><span>Текущие акции</span><a href="/shop/category/minsk/past_actions">Прошедшие акции (43)</a></div>
+		<div class="crumb"><span>Текущие акции</span><a href="/shop/category/minsk/past_actions">Прошедшие акции</a></div>
 		
 		
 		
@@ -191,4 +191,4 @@
 		</div>
 	<?php }} ?>
 	<div class="clear"></div>
-</div><?php $mabilis_ttl=1311509864; $mabilis_last_modified=1311425260; //Z:\home\kupontut.il\www\templates\commerce\shop\default/start_page.tpl ?>
+</div><?php $mabilis_ttl=1311663752; $mabilis_last_modified=1311544904; //Z:\home\kupontut.il\www\templates\commerce\shop\default/start_page.tpl ?>

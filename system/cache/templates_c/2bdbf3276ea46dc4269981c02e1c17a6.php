@@ -86,4 +86,4 @@
     <!-- end footer -->
 </div>
 </body>
-</html><?php $mabilis_ttl=1311509927; $mabilis_last_modified=1311420751; //Z:\home\kupontut.il\www\/templates/kupon/main.tpl ?>
+</html><?php $mabilis_ttl=1311663730; $mabilis_last_modified=1311420751; //Z:\home\kupontut.il\www\/templates/kupon/main.tpl ?>

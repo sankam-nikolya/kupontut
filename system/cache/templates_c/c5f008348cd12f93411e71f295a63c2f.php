@@ -23,4 +23,4 @@
 <div class="c_b1"></div>
 <div class="clear"><img src="<?php if(isset($THEME)){ echo $THEME; } ?>/images/x.gif" alt="" /></div>
 <div class="know"><p>Узнайте, как KuponTut.by может помочь Вам получить тысячи новых покупателей </p></div>
-<div class="clear"><img src="<?php if(isset($THEME)){ echo $THEME; } ?>/images/x.gif" height="70" alt="" /></div><?php $mabilis_ttl=1311506903; $mabilis_last_modified=1311422264; //Z:\home\kupontut.il\www\application\modules\user_manager/templates/public/user_account.tpl ?>
+<div class="clear"><img src="<?php if(isset($THEME)){ echo $THEME; } ?>/images/x.gif" height="70" alt="" /></div><?php $mabilis_ttl=1311663730; $mabilis_last_modified=1311422264; //Z:\home\kupontut.il\www\application\modules\user_manager/templates/public/user_account.tpl ?>

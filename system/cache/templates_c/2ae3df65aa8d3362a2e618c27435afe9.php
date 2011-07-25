@@ -84,4 +84,4 @@ alertBox.confirm('<h1>Удалить категорию ID: ' + id + '? </h1>', 
 
         </script>
 
-<?php $mabilis_ttl=1311507210; $mabilis_last_modified=1303832256; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\categories\list.tpl ?>
+<?php $mabilis_ttl=1311627699; $mabilis_last_modified=1303832256; //Z:\home\kupontut.il\www\/application/modules/shop/admin\templates\categories\list.tpl ?>

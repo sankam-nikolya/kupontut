@@ -74,4 +74,4 @@
 <div class="know"><p>Узнайте, как KuponTut.by может помочь Вам получить тысячи новых покупателей </p></div>
 <div class="clear"><img src="<?php if(isset($THEME)){ echo $THEME; } ?>/images/x.gif" height="70" alt="" /></div>
 
-<?php $mabilis_ttl=1311507022; $mabilis_last_modified=1311421955; //Z:\home\kupontut.il\www\application\modules\user_manager/templates/public/user_profile_edit.tpl ?>
+<?php $mabilis_ttl=1311662855; $mabilis_last_modified=1311421955; //Z:\home\kupontut.il\www\application\modules\user_manager/templates/public/user_profile_edit.tpl ?>

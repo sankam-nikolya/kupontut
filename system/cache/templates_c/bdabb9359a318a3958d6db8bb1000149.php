@@ -109,4 +109,4 @@
 	</div>
 </div>
 </body>
-</html><?php $mabilis_ttl=1311509923; $mabilis_last_modified=1311413783; //Z:\home\kupontut.il\www\templates\commerce\shop\default/main.tpl ?>
+</html><?php $mabilis_ttl=1311663752; $mabilis_last_modified=1311413783; //Z:\home\kupontut.il\www\templates\commerce\shop\default/main.tpl ?>

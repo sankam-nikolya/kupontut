@@ -18,14 +18,21 @@ class Shop extends ShopController {
     /**
      * Display shop main page
      */
-    public function index()
-    {
+    public function index() {
         $this->core->set_meta_tags('Главная');
-
-        $this->render('start_page', array(
-            'hits'=>$this->_getHits(6),
-            'newest'=>$this->_getNew(6),
-        ));
+        
+        if ( $this->checkCurrent() ) {
+	        
+	        $this->render('start_page', array(
+	            'hits'=>$this->_getHits(1),
+	            'newest'=>$this->_getNew(6),
+	        ));
+	        
+    	} else {
+    		
+    		echo 'warning error!';
+    		
+    	}	
     }
 
     
@@ -41,6 +48,7 @@ class Shop extends ShopController {
                 ->orderByCreated('DESC')
                 ->filterByHit(true)
                 ->filterByActive(true)
+                ->filterByCategoryId(37)  // 37 - текущие в минске
                 ->limit(6)
                 ->find();
     }
@@ -56,9 +64,41 @@ class Shop extends ShopController {
         return SProductsQuery::create()
                 ->orderByCreated('DESC')
                 ->filterByActive(true)
+                ->filterByCategoryId(37)  // 37 - текущие в минске
                 ->limit(6)
                 ->find();
     }
+    
+    function checkCurrent() {
+    
+    	$p = SProductsQuery::create()
+                ->filterByCategoryId(37)  // 37 - текущие в минске
+                ->find();
+    	
+        foreach ($p AS $k=>$v) {
+        	if ($v->created < time()) {
+        
+				$this->db->where('product_id', $v->id);
+				$this->db->delete('shop_product_categories');
+				
+				$data = array(
+					'category_id'	=>	38 ,
+					'product_id'	=>	$v->id,
+				);
+				$this->db->insert('shop_product_categories', $data);
+        				
+				$data = array('category_id' => 38 ); // переносим в прошедшие
+		
+				$this->db->where('id', $v->id);
+				$this->db->update('shop_products', $data);
+
+        	}
+        }   
+         //die();
+        //echo "<pre>"; print_r($p); echo "</pre>"; die();
+    	return true;
+    	
+	}
 }
 
 /* End of file shop.php */

@@ -164,4 +164,4 @@
 </div><!-- desktop end -->
 </body>
 </html>
-<?php $mabilis_ttl=1311491475; $mabilis_last_modified=1307609454; //Z:\home\kupontut.il\www\/templates/administrator/desktop.tpl ?>
+<?php $mabilis_ttl=1311661218; $mabilis_last_modified=1307609454; //Z:\home\kupontut.il\www\/templates/administrator/desktop.tpl ?>

@@ -10,7 +10,7 @@
 			<a href="#"><img src="{$THEME}/images/jj.png" alt="" /></a>
 			<a href="#"><img src="{$THEME}/images/plus.png" alt="" /></a>
 		</div>
-		<div class="crumb"><span>Текущие акции</span><a href="/shop/category/minsk/past_actions">Прошедшие акции (43)</a></div>
+		<div class="crumb"><span>Текущие акции</span><a href="/shop/category/minsk/past_actions">Прошедшие акции</a></div>
 		
 		
 		

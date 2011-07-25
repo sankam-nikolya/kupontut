@@ -62,8 +62,10 @@ class Category extends ShopController {
      * 
      * @access public
      */
-	public function index()
-	{
+	public function index() {
+		
+		$this->checkCurrent();
+		
         $this->core->set_meta_tags(
             $this->model->getName(), 
             $this->model->getMetaKeywords(),
@@ -281,6 +283,37 @@ class Category extends ShopController {
         
         return '<script type="text/javascript">'.$vars.$variantPrices."\n".$func."\n</script>";
     }
+    
+    function checkCurrent() {
+    
+    	$p = SProductsQuery::create()
+                ->filterByCategoryId(37)  // 37 - текущие в минске
+                ->find();
+    	
+        foreach ($p AS $k=>$v) {
+        	if ($v->created < time()) {
+        
+				$this->db->where('product_id', $v->id);
+				$this->db->delete('shop_product_categories');
+				
+				$data = array(
+					'category_id'	=>	38 ,
+					'product_id'	=>	$v->id,
+				);
+				$this->db->insert('shop_product_categories', $data);
+        				
+				$data = array('category_id' => 38 ); // переносим в прошедшие
+		
+				$this->db->where('id', $v->id);
+				$this->db->update('shop_products', $data);
+
+        	}
+        }
+        //echo "<pre>"; print_r($p); echo "</pre>"; die();
+    	return true;
+    	
+	}
+    
 }
 
 /* End of file category.php */

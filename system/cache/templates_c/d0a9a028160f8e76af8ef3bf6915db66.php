@@ -9,4 +9,4 @@
         <?php }} ?>
     </ul>
 <?php endif; ?>
-<?php $mabilis_ttl=1311507089; $mabilis_last_modified=1251921688; //Z:\home\kupontut.il\www\/templates/administrator/cats_tree_css.tpl ?>
+<?php $mabilis_ttl=1311661224; $mabilis_last_modified=1251921688; //Z:\home\kupontut.il\www\/templates/administrator/cats_tree_css.tpl ?>

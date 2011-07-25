@@ -458,15 +458,73 @@ class User_manager extends MY_Controller {
 	}
 	
 	function kupon() {
-		$username = $this->dx_auth->get_username();
 		
-		
-		$this->template->add_array(array(
-			'site_title' 		=> 'Личный кабинет | Мои купоны', 
-			'title' 		=> 'Мои купоны', 
-		));
-		
-		$this->display_tpl('user_kupon'); 
+		$this->load->model('dx_auth/user_profile', 'user_profile');
+		$this->load->model('dx_auth/users', 'users');
+        $this->load->library('template');
+        
+        $this->load->library('DX_Auth');
+
+    
+        if ($this->dx_auth->is_logged_in() == TRUE) {
+            ($hook = get_hook('core_user_is_logged_in')) ? eval($hook) : NULL;
+
+            $this->tpl_data['is_logged_in'] = TRUE;
+            $this->tpl_data['username'] = $this->dx_auth->get_username();
+	        $user_id = $this->dx_auth->get_user_id();
+		        	
+			$username = $this->dx_auth->get_username();
+			
+			$query = $this->db->get_where('my_coupons', array('user_id' => $user_id));
+			foreach ($query->result_array() as $row) {
+			    $my_coupons[] = $row['product_id'];
+			}
+			
+			$active = SProductsQuery::create()
+	                ->filterByActive(true)
+	                ->filterById($my_coupons)
+	                ->filterByCategoryId(37)  // 37 - текущие в минске
+	                ->limit(count($my_coupons))
+	                ->find();
+	        $count_active = count($active);
+			
+	        if ( $this->uri->segment(3) ==  'completed') {
+	 			$p = SProductsQuery::create()
+	                ->filterByActive(true)
+	                ->filterById($my_coupons)
+	                ->filterByCategoryId(38)  // 37 - текущие в минске
+	                ->limit(count($my_coupons))
+	                ->find();       	
+	        	$site_title = 'Личный кабинет | Мои купоны | Завершенные';
+	        } elseif ($this->uri->segment(3) ==  'all') {
+	 			$p = SProductsQuery::create()
+	                ->filterByActive(true)
+	                ->filterById($my_coupons)
+	                ->find();       	
+	        	$site_title = 'Личный кабинет | Мои купоны | Все';	        	
+	        
+        	} else {
+	        	$type = 'active'; // текущие
+	 			$p = $active;
+	             $site_title = 'Личный кабинет | Мои купоны | Активные';
+	        }
+               
+                
+            /*echo "<pre>current\r\n"; print_r($current);echo "</pre>";    
+            echo "<pre>post\r\n"; print_r($past);echo "</pre>"; die();    */
+
+			$this->template->add_array(array(
+				'site_title' 		=> $site_title, 
+				'title' 			=> 'Мои купоны', 
+				'products'			=>	$p,
+				'totalProducts'		=>	count($p),
+				'count_active'		=>	$count_active,
+			));
+			
+			$this->display_tpl('user_kupon');
+        } else {
+        	
+        }
 	}
 	
 	
